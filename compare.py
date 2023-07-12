@@ -3,17 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
-import sys
-from PyQt5 import QtWidgets
-QtWidgets.QApplication(sys.argv)
-
 def mse(imageA, imageB):
 	# the 'Mean Squared Error' between the two images is the
 	# sum of the squared difference between the two images;
 	# NOTE: the two images must have the same dimension
 	err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
 	err /= float(imageA.shape[0] * imageA.shape[1])
-	
+
 	# return the MSE, the lower the error, the more "similar"
 	# the two images are
 	return err
@@ -39,8 +35,8 @@ def compare_images(imageA, imageB, title):
 # load the images -- the original, the original + contrast,
 # and the original + photoshop
 original = cv2.imread("examples/maps/sandstone.png")
-contrast = cv2.imread("examples/test_tiles/sandstone512-511_map.png")
-shopped = cv2.imread("examples/test_tiles/sandstone512-512_map.png")
+contrast = cv2.imread("test_tiles/sandstone512-511_map.png")
+shopped = cv2.imread("test_tiles/sandstone512-512_map.png")
 # convert the images to grayscale
 original = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
 contrast = cv2.cvtColor(contrast, cv2.COLOR_BGR2GRAY)

@@ -7,6 +7,8 @@ name = "pypi"
 pillow = "*"
 matplotlib = "*"
 scipy = "*"
+scikit-image = "*"
+opencv-python = "*"
 
 [dev-packages]
 
