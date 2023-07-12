@@ -40,13 +40,18 @@ print(indOfYTop)
 
 
 #TODO: cut dimensions from 0, 0 to statistically significant value or crop to rectangle of sign value sides
-
-plt.figure(figsize=(10, 10))
-plt.imshow(acorr, cmap='Blues', vmin=0, vmax=np.percentile(acorr, 99.5))
-plt.xlim(0, image.shape[1] / 2)
-plt.ylim(0, image.shape[0] / 2)
-plt.title('2D autocorrelation', fontsize=18)
-plt.xlabel('Horizontal lag (px)', fontsize=15)
-plt.ylabel('Vertical lag (px)', fontsize=15)
-#plt.savefig('foo.png')
-plt.show()
+showGraph = False
+saveGraph = False
+if (showGraph or saveGraph):
+    plt.figure(figsize=(10, 10))
+    plt.imshow(acorr, cmap='Blues', vmin=0, vmax=np.percentile(acorr, 99.5))
+    plt.xlim(0, image.shape[1] / 2)
+    plt.ylim(0, image.shape[0] / 2)
+    plt.title('2D autocorrelation', fontsize=18)
+    plt.xlabel('Horizontal lag (px)', fontsize=15)
+    plt.ylabel('Vertical lag (px)', fontsize=15)
+    if saveGraph:
+        plt.savefig('result.png')
+    if (showGraph):
+        plt.show()
+    
