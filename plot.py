@@ -54,4 +54,3 @@ if (showGraph or saveGraph):
         plt.savefig('result.png')
     if (showGraph):
         plt.show()
-    

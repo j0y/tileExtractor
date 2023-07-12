@@ -8,7 +8,13 @@ cases:
 
 
 use:
-`plot.py` for finding tile size
+
+To activate this project's virtualenv, run `pipenv shell`.   
+Alternatively, run a command inside the virtualenv with `pipenv run`.
+
+`pipenv run python plot.py`
+
+`plot.py` for finding tile size   
 `compare.py` for comparing generated maps from test tiles and finding one that identical to original
 
 algo:
